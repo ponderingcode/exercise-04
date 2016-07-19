@@ -4,6 +4,7 @@ var val0;
 var reverse = "";
 
 function onSubmitButtonPressed() {
+    event.preventDefault();
     val0 = $('#inp0').val();
     
     for (var i = 0; i < val0.length; i++) {
@@ -16,7 +17,5 @@ function onSubmitButtonPressed() {
         reverse += arrStrReverse[i];        
     }
     
-    alert(reverse);
-    
-    (val0 === reverse) ? alert('The word "' + val0 + '" is a palindrome.') : alert('The word "' + val0 + '" is not a palindrome.');
+    (val0.toUpperCase() === reverse.toUpperCase()) ? $('#output').text('The word "' + val0 + '" is a palindrome.') : $('#output').text('The word "' + val0 + '" is not a palindrome.');
 }
